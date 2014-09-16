@@ -4,6 +4,7 @@ Package docstring
 import random
 
 from character import errors
+from rolling import Dice
 
 
 class Character(object):
@@ -53,8 +54,7 @@ class Character(object):
         return 20.0 * self.speed
 
     def _random_human_stat(self):
-        return random.randint(8, 10)
-
+        return Dice(count=1, sides=3).roll(offset=7)
 
 class PPE(object):
     current = 0
